@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background-color: #A9A9A9;
+}
+
+/* To look detached container make body bg color grey not container color grey */
+.container {
+    min-height: 900px;
+    margin: 0 auto;
+
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+    margin-top: 50px;
+    box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+    border-radius: 10px;
+}
+
+/* span is styled */
+#web {
+    font-size: 20px;
+    color: #04175A;
+}
+
+/* Form Container is made grid and column is auto fit either 200 px or 1frame when shrinked */
+.form_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* all form control divs are made column direction flex */
+.form_control {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+input:focus {
+    outline-color: red;
+}
+
+/* button is styled */
+.button_container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+button {
+    background-color: red;
+    border: transparent solid 2px;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s ease-in;
+}
+
+button:hover {
+    background-color: grey;
+    border: 2px solid red;
+    color: black;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+/* Work is done on text area  */
+.textarea_control {
+
+    grid-column: 1 / span 2;
+}
+
+.textarea_control textarea {
+    width: 100%;
+}
+
+/* The moment side of viewport become less than or equal to 460px we make one column at a time */
+@media(max-width:460px) {
+    .textarea_control {
+        grid-column: 1 / span 1;
+    }
+}
